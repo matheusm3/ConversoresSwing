@@ -24,10 +24,6 @@ public class Calculos {
 			result = numero * 4 ;
 		}
 		
-		else {
-			result = numero ;
-		}
-		
 		String retorno = Double.toString(result);
 		setResultadomoeda(retorno);
 		

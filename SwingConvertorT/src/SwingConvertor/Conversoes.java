@@ -28,8 +28,8 @@ public class Conversoes extends Calculos{
 
 	public static void main(String[] args) {
 		JFrame frame = new JFrame();
-		frame.setTitle("Nova Janela");
-		frame.setSize(400, 420);
+		frame.setTitle("Conversões");
+		frame.setSize(400, 400);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 	
@@ -38,24 +38,18 @@ public class Conversoes extends Calculos{
 		
 		JMenuBar menuBar = new JMenuBar();
 				
-		// Cria o menu Arquivo
 		JMenu menuArquivo = new JMenu("Arquivo");
 		menuArquivo.setMnemonic(KeyEvent.VK_A);
 		
-		// Cria os itens do menu
 		JMenuItem item = new JMenuItem("Sair",KeyEvent.VK_I);
 		item.addActionListener(new ActionListener() {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				// Fecha a tela
-				//frame.setVisible(false);
-				//frame.dispose();
 				frame.dispatchEvent(new WindowEvent(frame, WindowEvent.WINDOW_CLOSING));
 			}
 		});
 
-		// Adiciona um separador
 		menuArquivo.addSeparator();
 		menuArquivo.add(item);
 		
@@ -175,7 +169,7 @@ public class Conversoes extends Calculos{
 			public void actionPerformed(ActionEvent e) {
 				
 				JOptionPane.showMessageDialog(null, "Trabalho para o quarto bimestre do segundo ano de Sistemas de Informação - Univille");
-
+			
 			}
 		});
 		
@@ -188,17 +182,11 @@ public class Conversoes extends Calculos{
 		menuBar.add(menuConfigs);
 		menuBar.add(menu2);
 		painel.add(aba);
-		//Adiciona Menu Bar
 		
 		frame.setJMenuBar(menuBar);
-		
-		
-		// Adiciona o painel na janela
 		frame.add(painel);
 		
-		
 		frame.show();
-
 	}
 	
 	
