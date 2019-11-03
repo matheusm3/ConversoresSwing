@@ -148,7 +148,7 @@ public class Conversoes extends Calculos{
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				
-				JOptionPane.showMessageDialog(null, "Matheus Menezes da Costa");
+										JOptionPane.showMessageDialog(null, "Matheus Menezes da Costa");
 
 			}
 		});
@@ -202,7 +202,7 @@ public class Conversoes extends Calculos{
 			String itens [] = {"Real", "Dólar"};
 			
 			Dimension size = new Dimension(90, 20);
-			Dimension buttonsize = new Dimension(200, 20);
+			Dimension buttonsize = new Dimension(180, 20);
 
 			JComboBox<String> inp = new JComboBox<String>(itens);
 			inp.setPreferredSize(size);
@@ -280,7 +280,7 @@ public class Conversoes extends Calculos{
 			String itens [] = {"Celsius", "Fahrenheit", "Kelvin"};
 			
 			Dimension size = new Dimension(90, 20);
-			Dimension buttonsize = new Dimension(200, 20);
+			Dimension buttonsize = new Dimension(180, 20);
 
 			JComboBox<String> inp = new JComboBox<String>(itens);
 			inp.setPreferredSize(size);
@@ -362,7 +362,7 @@ public class Conversoes extends Calculos{
 			String itens [] = {"Metro", "Centímetro", "Milímetro"};
 			
 			Dimension size = new Dimension(90, 20);
-			Dimension buttonsize = new Dimension(200, 20);
+			Dimension buttonsize = new Dimension(180, 20);
 
 			JComboBox<String> inp = new JComboBox<String>(itens);
 			inp.setPreferredSize(size);

@@ -24,6 +24,10 @@ public class Calculos {
 			result = numero * 4 ;
 		}
 		
+		if (metodo1.equals(metodo2)) {
+			JOptionPane.showMessageDialog(null, "Métodos iguais");
+		}
+		
 		String retorno = Double.toString(result);
 		setResultadomoeda(retorno);
 		
@@ -62,6 +66,12 @@ public class Calculos {
 			result = numero / 1000;
 		}
 		
+
+		if (metodo1.equals(metodo2)) {
+			JOptionPane.showMessageDialog(null, "Métodos iguais");
+		}
+		
+		
 		String retorno = Double.toString(result);
 		setResultadotemp(retorno);
 		
@@ -99,6 +109,10 @@ public class Calculos {
 		
 		if(metodo1 == "Kelvin" && metodo2 == "Fahrenheit") {
 			result = (numero - 273.15)* 1.8000 + 32.00;
+		}
+
+		if (metodo1.equals(metodo2)) {
+			JOptionPane.showMessageDialog(null, "Métodos iguais");
 		}
 		
 		String retorno = Double.toString(result);
