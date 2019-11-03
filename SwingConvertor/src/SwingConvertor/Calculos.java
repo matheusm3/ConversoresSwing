@@ -8,6 +8,7 @@ public class Calculos {
 	static String resultadotemp;
 	static String resultadocompr;
 	
+	
 	public static String getMoeda(String metodo1, String metodo2, String num) {
 
 		String texto_numero = num.replaceAll( "," , "." );
@@ -114,7 +115,7 @@ public class Calculos {
 	public static String getResultadomoeda() {
 		return resultadomoeda;
 	}
-
+	
 	public static void setResultadomoeda(String resultadomoeda) {
 		Calculos.resultadomoeda = resultadomoeda;
 	}

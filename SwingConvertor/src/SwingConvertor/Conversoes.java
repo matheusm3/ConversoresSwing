@@ -10,6 +10,7 @@ import java.awt.event.WindowEvent;
 import javax.swing.ButtonGroup;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
+import javax.swing.JCheckBox;
 import javax.swing.JCheckBoxMenuItem;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
@@ -61,49 +62,126 @@ public class Conversoes extends Calculos{
 		JMenu menuConfigs = new JMenu("Editar");
 		JMenuItem checkItem = new JMenuItem("Limpar");
 		checkItem.setSelected(true);
-
+				
 		JCheckBoxMenuItem radio1 = new JCheckBoxMenuItem("Exibir Moeda");
 		JCheckBoxMenuItem radio2 = new JCheckBoxMenuItem("Exibir Temperatura");
 		JCheckBoxMenuItem radio3 = new JCheckBoxMenuItem("Exibir Comprimento");
 		
-		ButtonGroup group = new ButtonGroup();
-		group.add(radio1);
-		group.add(radio2);
-
-		radio1.setSelected(false);
-		radio2.setSelected(false);
-		radio3.setSelected(false);
-		checkItem.addActionListener(new ActionListener() {
-			
-			@Override
-			public void actionPerformed(ActionEvent e) {
-
-				radio1.setSelected(false);
-				radio2.setSelected(false);				
-				radio3.setSelected(false);				
-			}
-		});
-
+		radio1.setSelected(true);
+		radio2.setSelected(true);
+		radio3.setSelected(true);
+		
 		menuConfigs.add(checkItem);
 		menuConfigs.addSeparator();
 		menuConfigs.add(radio1);
 		menuConfigs.add(radio2);
 		menuConfigs.add(radio3);
-		
-		
-		JMenu menu2 = new JMenu("Ajuda");
-		JMenuItem item5 = new JMenuItem("Sobre",KeyEvent.VK_S);
-		
+				
+		// iniciando as abas
 		JTabbedPane aba = new JTabbedPane();
 		ImageIcon icon = new ImageIcon("assets/imgs/icone_folder.png");
 		aba.addTab("Moeda", icon, criarPanelMoeda());
 		aba.addTab("Temperatura", icon, criarPanelTemperatura());
 		aba.addTab("Comprimento", icon, criarPanelComprimento());
 		
+		checkItem.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+
+				radio1.setSelected(false);
+				radio2.setSelected(false);
+				radio3.setSelected(false);
+						
+			}
+		});
 		
+		radio1.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				
+				if (radio1.isSelected() == true) {
+			        aba.setEnabledAt(0, true);
+
+				} else {
+					aba.setEnabledAt(0, false);
+
+				}
+					
+			}
+		});
 		
+		radio2.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				
+				if (radio2.isSelected() == true) {
+			        aba.setEnabledAt(1, true);
+
+				} else {
+					aba.setEnabledAt(1, false);
+
+				}
+					
+			}
+		});
 		
-		menu2.add(item5);
+		radio3.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				
+				if (radio3.isSelected() == true) {
+			        aba.setEnabledAt(2, true);
+
+				} else {
+					aba.setEnabledAt(2, false);
+
+				}
+					
+			}
+		});
+		
+		JMenu menu2 = new JMenu("Ajuda");
+		JMenuItem desenv = new JMenuItem("Desenvolvedores");
+		JMenuItem repos = new JMenuItem("Repositório do Github");
+		JMenuItem sobre = new JMenuItem("Sobre");
+
+		desenv.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				
+				JOptionPane.showMessageDialog(null, "Matheus Menezes da Costa");
+
+			}
+		});
+		
+		repos.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				
+				JOptionPane.showMessageDialog(null, "https://github.com/matheusm3/ConversoresSwing");
+
+			}
+		});
+		
+		sobre.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				
+				JOptionPane.showMessageDialog(null, "Trabalho para o quarto bimestre do segundo ano de Sistemas de Informação - Univille");
+
+			}
+		});
+		
+		menu2.add(desenv);
+		menu2.add(repos);
+		menu2.add(sobre);
 		
 		// Adicina o menu na barra
 		menuBar.add(menuArquivo);
@@ -122,7 +200,6 @@ public class Conversoes extends Calculos{
 		frame.show();
 
 	}
-	
 	
 	
 	////////////////////////////////////// P A I N E I S //////////////////////////////////////
@@ -284,7 +361,6 @@ public class Conversoes extends Calculos{
 			panel.add(actinput);
 			panel.add(result);
 			panel.add(button);
-
 
 	    	return panel;
 	
